@@ -78,5 +78,3 @@ btn.addEventListener("click",()=>{
     }
     count++;
 })
-
-console.log(ques.length);
