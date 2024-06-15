@@ -1,0 +1,121 @@
+body{
+    margin: 0;
+    padding:0;
+    font-family: sans-serif;
+    overflow: hidden;
+    background-color: #AFDDF5;
+}
+
+.container{
+    display:flex;
+    height: 90vh;
+}
+#check{
+    display: none;
+}
+.btn-one{
+    position: absolute;
+    left: 0;
+    line-height: 60px;
+    font-weight: 500;
+    color: #0b0a0a;
+}
+.btn-one i{
+    font-size:2rem;
+    margin-left: 1rem;
+}
+.container .sidebar{
+    position: relative;
+    background-color: rgb(203, 151, 7);
+    width:17.5rem;
+    top: 3rem;
+    top:50px;
+    left:-300px;
+    transition: all .4s linear;
+    scrollbar-width: none;
+    overflow: scroll;
+    
+}
+.btn-two{
+     position: fixed;
+     top: 0;
+    color: #080808; 
+    background-color:rgb(203, 7, 174);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:280px;
+}
+.btn-two h1{
+    margin: .5rem;
+}
+.btn-two i{
+    font-size:2rem;
+}
+.btn-one i:hover{
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition:all .5s linear;
+}
+.btn-two i:hover{
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition:all .5s linear;
+}
+#check:checked ~ .sidebar{
+    left: 0;
+    cursor: pointer;
+    transition:all .4s linear;
+}
+#check:checked ~ .btn-one{
+    opacity: 0;
+}
+.container li{
+    margin-bottom: 10px;
+    padding:10px;
+    list-style-type: none;
+    font-size:1.5rem;
+    font-weight: 600;
+    border-radius:.75rem;
+}
+.container ul{
+    padding: 0;
+    
+}
+.container li:hover{
+    background-color: rgb(158, 242, 242);
+    box-shadow: 0 0 4px 0;
+    transition: all .5s linear;
+}
+
+.main{
+    flex: 1;
+    text-align: center;
+    
+}
+.main h1{
+    font-style: initial;
+    margin-top: 10rem;
+}
+.main button{
+    font: 1rem sans-serif;
+    padding: .5rem;
+    border-radius: 2rem;
+    color: rgb(156, 239, 73);
+}
+.main span{
+    display: block;
+    margin-top: 1rem;
+    font-size: large;
+    color: #0b3feb;
+}
+
+@media(max-width:573px){
+    .container .sidebar{
+        position:absolute;
+
+    }
+    .main.button{
+        z-index: 1;
+    }
+}
