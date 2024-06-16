@@ -186,7 +186,7 @@ let main = document.querySelector(".main");
 let count =0;
 
 btn.addEventListener("click",()=>{
-    let ranIdx = Math.floor(Math.random()*59);
+    let ranIdx = Math.floor(Math.random()*177);
     if(count<=2){
         let str = ques[ranIdx];
         let span = document.createElement("h3");
