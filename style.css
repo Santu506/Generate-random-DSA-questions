@@ -152,3 +152,7 @@ span::-webkit-scrollbar{
         height: 75vh;
     }
 }
+
+button{
+    cursor:pointer;
+}
