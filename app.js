@@ -177,22 +177,154 @@ let ques=["Binary Search Algorithm – Iterative and Recursive Implementation",
     "longest bitonic subset"
 
     
-]
-// let link=["https://www.geeksforgeeks.org/problems/binary-search-1587115620/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article","https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/"]
+];
+let storeDSA = [];
+let isDsa = false;
+
+let quesfrontend = ["html def" , "doctype def in html", "html vs html5", "div v/s span in html", "symentic tag in  html", "form tag int html", "meta tag in html", "favicon in html","css def","html v/s css", "position property", "display inline v/s inline-block", "block v/s inline","!important in css", "box model in css", "media queries in css", "flexbox v/s grid ", "bootstrap def", "grid system explain", "javascript def", "dom in js", "vertual dom in js", "Bom in js","event in js", "Array in js", "object in js","map in js", "loop in js", "promise in js", "blocking v/s non-blocking in js", "async and await in js", "callback in js", "let v/s var v/s const in js", "slice v/s splice in js", "event loop in js", "async v/s defer in js", "closure int js", "this in js", "client side js v/s server side js ", "spread in js", "debouncing in js","throtling in js", "call v/s apply v/s blind in js"];
+let isFrontend = false;
+let storeFrontend = [];
+
+let quesReact = ["what is react", "why use react js"," what are the feautures of react js", "what is jsx", "what is props in react js", "what is state in react js", "what is hooks in react js", "what is context api in react js", "what is router in react js", "what is redux in react js","different between class component v/s functional component", "what are the different types of hooks in react js", "custom hooks","what is component lifecycle in react js", "what is Strict mode in react js", "how is react different from angular","life cycle method in react", "what is prp drilling in react", "higher order component in react"];
+let isReact = false;
+let storeReact = [];
+
+let quesDatabase = ["what is DBMS", "what is RDBMS", "What is Database", "Few advantage of DBMS", "Different language present in DBMS", "Asid property in DBMS", "What is ER model", "What is meant by normalization and denormalization", "Difference between 2-tier and 3-tier architecture" , "Explain different types of keys" , "Explain different type of normalization", "MySql connection v/s mongodb connections", "def nosql database"];
+let isDatabase = false;
+let storeDatabase = [];
+
+let quesBackend = ["Explain th purpose of the Backend", "Explain the essence of Dry And die principles","what is web server", "Difference between get and post request", "when you wuold use cashing", "when should you use asynchronous programming", "what is the difference between promises and callback", "what is closure", "what is higher order function? why they are use full", "what is microservise", "how would you design an api", "Different between restfull api v/s soap api", "how do you handle error when making api calls","Difference between relational v/s non-relational database", "Some benefit of using a NoSql dataBase", "How would you design a software systemfor scalability", "Scale out vs sclase up : how they are different", "what are some common security risk when building a web application", "how would you implement authentication and authorization on a new project" , "what is the different between a cookie and session","what is JWT", "what are some performence testing steps"];
+let isBackend = false;
+let storeBackend = [];
 
 
+
+let count = 0;
+let ul = document.querySelector("ul");
 let btn = document.querySelector("button");
 let main = document.querySelector(".main");
-let count =0;
+let span = document.querySelector("span");
+let h2 = document.querySelector("h2");
+ 
+ul.addEventListener("click",(e)=>{
+    if(e.target.innerText === "DSA"){
+        isDsa = true;
+        isFrontend = false;
+        isReact = false;
+        isDatabase = false;
+        isBackend = false;
+        main.setAttribute("class","main-display");
+        span.innerHTML = "";
+        storeDSA = [];
+        h2.innerText = " Generate Random Question for DSA";
+        count =0;
+        
+    }else if(e.target.innerText === "HTML CSS JS"){
+        count = 0;
+        isFrontend = true;
+        isDsa = false;
+        isReact = false;
+        isDatabase = false;
+        isBackend = false;
+        main.setAttribute("class","main-display");
+        span.innerHTML = "";
+        storeFrontend = [];
+        h2.innerText = " Generate Random Question for Frontend";
+    }else if(e.target.innerText === "React"){
+        count = 0;
+        isReact = true;
+        isFrontend = false;
+        isDsa = false;
+        isDatabase = false;
+        isBackend = false;
+        main.setAttribute("class","main-display");
+        span.innerHTML = "";
+        storeReact = [];
+        h2.innerText = " Generate Random Question for React";
+    }else if(e.target.innerText === "DATABASE"){
+        count = 0;
+        isDatabase = true;
+        isFrontend = false;
+        isDsa = false; 
+        isReact = false;
+        isBackend = false;
+        main.setAttribute("class","main-display");
+        span.innerHTML = "";
+        storeDatabase = [];
+        h2.innerText = " Generate Random Question for Database";
+    }else if(e.target.innerText === "BACKEND"){
+        count = 0;
+        isBackend = true;
+        isFrontend = false;
+        isDsa = false; 
+        isReact = false;
+        isDatabase = false;
+        main.setAttribute("class","main-display");
+        span.innerHTML = "";
+        storeBackend = [];
+        h2.innerText = " Generate Random Question for Backend";
+    }
+    
+    
+})
 
 btn.addEventListener("click",()=>{
-    let ranIdx = Math.floor(Math.random()*177);
-    if(count<=2){
+    if(isDsa){
+        count++;
+        let ranIdx = Math.floor(Math.random()*ques.length);
+        if(storeDSA.includes(ques[ranIdx])){
+            ranIdx = Math.floor(Math.random()*ques.length);
+        }
+        storeDSA.push(ques[ranIdx]);
         let str = ques[ranIdx];
-        let span = document.createElement("h3");
-        span.innerText = `Question ${count} :  ${str}` ;
-        span.style.color = "green";
-        main.append(span);
+        let p = document.createElement("h4");
+        p.innerText = `Q${count} :: ${str}  ?`;
+        span.append(p);
+
+    }else if(isFrontend){
+        count++;
+        let ranIdx = Math.floor(Math.random()*quesfrontend.length);
+        if(storeFrontend.includes(quesfrontend[ranIdx])){
+            ranIdx = Math.floor(Math.random()*quesfrontend.length);
+        }
+        storeFrontend.push(quesfrontend[ranIdx]);
+        let str = quesfrontend[ranIdx];
+        let p = document.createElement("h4");
+        p.innerText = `${count} ::  ${str} ? `;
+        span.append(p);
+    }else if(isReact){
+        count++;
+        let ranIdx = Math.floor(Math.random()*quesReact.length);
+        if(storeReact.includes(quesReact[ranIdx])){
+            ranIdx = Math.floor(Math.random()*quesReact.length);
+        }
+        storeReact.push(quesReact[ranIdx]);
+        let str = quesReact[ranIdx];
+        let p = document.createElement("h4");
+        p.innerText = `${count} ::  ${str} ? `;
+        span.append(p);
     }
-    count++;
+    else if(isDatabase){
+        count++;
+        let ranIdx = Math.floor(Math.random()*quesDatabase.length);
+        if(storeDatabase.includes(quesDatabase[ranIdx])){
+            ranIdx = Math.floor(Math.random()*quesDatabase.length);
+        }
+        storeDatabase.push(quesDatabase[ranIdx]);
+        let str = quesDatabase[ranIdx];
+        let p = document.createElement("h4");
+        p.innerText = `${count} ::  ${str} ? `;
+        span.append(p);
+    }else if(isBackend){
+        count++;
+        let ranIdx = Math.floor(Math.random()*quesBackend.length);
+        if(storeBackend.includes(quesBackend[ranIdx])){
+            ranIdx = Math.floor(Math.random()*quesBackend.length);
+        }
+        storeBackend.push(quesBackend[ranIdx]);
+        let str = quesBackend[ranIdx];
+        let p = document.createElement("h4");
+        p.innerText = `${count} ::  ${str} ? `;
+        span.append(p);
+    }
 })
