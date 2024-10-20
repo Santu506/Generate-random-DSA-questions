@@ -96,6 +96,7 @@ body{
 .main{
     flex: 1;
     text-align: center;
+    display: none;
     
 }
 .main h1{
@@ -122,5 +123,32 @@ body{
     }
     .main.button{
         z-index: 1;
+    }
+}
+
+.main-display{
+    display:block ;
+    flex: 1;
+    text-align: center;
+}
+
+span{
+    display: block;
+    margin-top: 1rem;
+    font-size: large;
+    color: #0b3feb;
+    overflow: scroll;
+    text-align: start;
+    border-radius: 1rem;
+    padding: 1rem;
+    height: 80vh;
+
+}
+span::-webkit-scrollbar{
+    display: none;
+}
+@media screen and (max-width:573px){
+    span{
+        height: 75vh;
     }
 }
