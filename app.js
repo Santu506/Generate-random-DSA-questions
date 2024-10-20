@@ -277,6 +277,7 @@ btn.addEventListener("click",()=>{
         }
         storeDSA.push(ques[ranIdx]);
         let str = ques[ranIdx];
+        str = str.charAt(0).toUpperCase() + str.slice(1);
         let p = document.createElement("h4");
         p.innerText = `Q${count} :: ${str}  ?`;
         span.append(p);
@@ -289,6 +290,7 @@ btn.addEventListener("click",()=>{
         }
         storeFrontend.push(quesfrontend[ranIdx]);
         let str = quesfrontend[ranIdx];
+        str = str.charAt(0).toUpperCase() + str.slice(1);
         let p = document.createElement("h4");
         p.innerText = `${count} ::  ${str} ? `;
         span.append(p);
@@ -300,6 +302,7 @@ btn.addEventListener("click",()=>{
         }
         storeReact.push(quesReact[ranIdx]);
         let str = quesReact[ranIdx];
+        str = str.charAt(0).toUpperCase() + str.slice(1);
         let p = document.createElement("h4");
         p.innerText = `${count} ::  ${str} ? `;
         span.append(p);
@@ -312,6 +315,7 @@ btn.addEventListener("click",()=>{
         }
         storeDatabase.push(quesDatabase[ranIdx]);
         let str = quesDatabase[ranIdx];
+        str = str.charAt(0).toUpperCase() + str.slice(1);
         let p = document.createElement("h4");
         p.innerText = `${count} ::  ${str} ? `;
         span.append(p);
@@ -323,6 +327,7 @@ btn.addEventListener("click",()=>{
         }
         storeBackend.push(quesBackend[ranIdx]);
         let str = quesBackend[ranIdx];
+        str = str.charAt(0).toUpperCase() + str.slice(1);
         let p = document.createElement("h4");
         p.innerText = `${count} ::  ${str} ? `;
         span.append(p);
